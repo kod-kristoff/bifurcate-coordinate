@@ -17,6 +17,12 @@ fn weight_recursive_on_empty_node_returns_0() {
 }
 
 #[test]
+fn weight_recursive_on_asymmetric_tree_returns_correct_value() {
+    let tree = Node::new(Node::left(Node::left(Node::empty())), Node::empty());
+    assert_eq!(weight_recursive(&tree), 3);
+}
+
+#[test]
 fn non_empty_node_is_not_empty() {
     let n = Node::new(Node::empty(), Node::empty());
 
